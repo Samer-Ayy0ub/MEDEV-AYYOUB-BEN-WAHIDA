@@ -20,8 +20,7 @@ public class MEDEVTPNote {
         game.start();
         while (!game.checkWinner()){          
             game.takeTurn();
-            game.switchTurn();
-            
+            game.switchTurn();           
         }
 
     }
