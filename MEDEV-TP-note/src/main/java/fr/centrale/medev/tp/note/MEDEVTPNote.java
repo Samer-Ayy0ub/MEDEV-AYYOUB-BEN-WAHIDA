@@ -10,9 +10,17 @@ package fr.centrale.medev.tp.note;
  */
 public class MEDEVTPNote {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Game game = new Game();
-        
-        game.takeTurn();
+        game.start();
+        while (!game.checkWinner()){          
+            game.takeTurn();
+            game.switchTurn();
+            
+        }
     }
 }

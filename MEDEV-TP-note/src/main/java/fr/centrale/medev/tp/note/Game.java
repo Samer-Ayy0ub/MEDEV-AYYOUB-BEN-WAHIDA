@@ -16,10 +16,17 @@ public class Game {
     private Player player2;
     private Player currentPlayer;
     
+    /**
+     *
+     */
     public Game(){
         
     }
    // methode qui initialize Board et les Joueurs 
+
+    /**
+     *
+     */
    public void start(){
        Scanner scanner = new Scanner(System.in);
        board.initialize();
@@ -32,8 +39,12 @@ public class Game {
        currentPlayer = player1;
        
    }
-   
+
+    /**
+     * method that plays out a turn for the currentPlayer
+     */
    public void takeTurn(){
+       board.display();
        System.out.println("C'est le tour de : "+currentPlayer.getName());
        Scanner scanner = new Scanner(System.in);
        int x = -1, y = -1; // Variables for the position
@@ -68,7 +79,45 @@ public class Game {
         
     }
    
+    /**
+     * method that switches the currentPlayer between player 1 and 2
+     */
+    public void switchTurn(){      
+    if (currentPlayer == player1) {
+        currentPlayer = player2;
+        } else {
+        currentPlayer = player1;
+        }
+    }
    
+    /**
+     *  method that checks if the game ended and prints the resulting winner
+     * @return
+     */
+    public boolean checkWinner(){
+       int N = board.countPieces('N');
+       int B =board.countPieces('B');
+       if (N+B == 64){
+           if (N > B){
+               System.out.println(player1.getName()+" est vainceur!!");
+               return true;
+           }
+           else if (N < B){
+               System.out.println(player1.getName()+" est vainceur!!");
+               return true;
+        }
+           else {
+               System.out.println("Egalité!!");
+               return true;
+           }
+           
+      }
+      return false;
        
    }
+
+   }
+    
+       
+   
 

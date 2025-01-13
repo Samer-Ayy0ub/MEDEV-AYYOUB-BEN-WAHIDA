@@ -12,6 +12,11 @@ public class Player {
     private String name;
     private char color;
     
+    /**
+     *
+     * @param aName
+     * @param aColor
+     */
     public Player(String aName, char aColor){
         this.name=aName;
         this.color=aColor;
@@ -21,22 +26,45 @@ public class Player {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public char getColor() {
         return color;
     }
 
+    /**
+     *
+     * @param color
+     */
     public void setColor(char color) {
         this.color = color;
     }
-    // methode permettant le joueur de faire une 
+  
+
+    /**
+     *  method that plays out a turn for the player
+     * @param x
+     * @param y
+     * @param board
+     */
     public void play(int x, int y, Board board) {
        board.makeMove(x, y, this.color);   
     }
