@@ -6,32 +6,36 @@ package fr.centrale.medev.tp.note;
 
 /**
  *
- * @author samer
+ * @author Nadhem
  */
-class Board {
 
-    void makeMove(int x, int y, Player aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+import java.util.ArrayList;
+import java.util.List;
+
+public class Board {
+    private final Cell[][] grid;
+
+    // Dimensions du plateau
+    private static final int SIZE = 8;
+
+    // Constructeur
+    public Board() {
+        grid = new Cell[SIZE][SIZE];
+        initializeBoard();
+    }
+     // Initialisation du plateau
+    private void initializeBoard() {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                grid[i][j] = new Cell(i, j); // Chaque cellule connaît ses coordonnées
+            }
+        }
+
+        // Placement initial des pions au centre du plateau
+        grid[3][3].setState('B');
+        grid[4][4].setState('B');
+        grid[3][4].setState('N');
+        grid[4][3].setState('N');
     }
 
-    void initialize() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    void makeMove(int x, int y, char color) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    boolean isValidMove(int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    int countPieces(char c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    void display() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }
