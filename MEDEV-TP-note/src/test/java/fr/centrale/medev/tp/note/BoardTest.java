@@ -24,7 +24,6 @@ class BoardTest {
         assertEquals('B', board.grid[4][4].getState());
         assertEquals('N', board.grid[3][4].getState());
         assertEquals('N', board.grid[4][3].getState());
-
         // Ensure all other cells are empty
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
