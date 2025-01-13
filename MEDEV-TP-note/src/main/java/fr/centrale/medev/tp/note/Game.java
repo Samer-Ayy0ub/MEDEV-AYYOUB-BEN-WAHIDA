@@ -29,7 +29,7 @@ public class Game {
      */
    public void start(){
        Scanner scanner = new Scanner(System.in);
-       board.initialize();
+       board = new Board();
        System.out.println("Entrez le nom du premier joueur (pieces noires):");
        String player1Name = scanner.nextLine();
        player1 = new Player(player1Name, 'N');
@@ -46,8 +46,10 @@ public class Game {
    public void takeTurn(){
        board.display();
        System.out.println("C'est le tour de : "+currentPlayer.getName());
+       if (board.checkForPossibleMoves(currentPlayer.getColor())){
        Scanner scanner = new Scanner(System.in);
        int x = -1, y = -1; // Variables for the position
+       
        while (true) {
             System.out.print("Entrez la position desirée (ex: d3): ");
             String input = scanner.nextLine().toLowerCase().trim();
@@ -64,18 +66,21 @@ public class Game {
                         // Convert letter to y (1 to 8) and number to x
                         y = letter - 'a' + 1; // 'a' -> 1, 'b' -> 2, ..., 'h' -> 8
                         x = Character.getNumericValue(number); // '1' -> 1, ..., '8' -> 8
-                         
+                        
                     }
                 }
             }
             
-            if (board.isValidMove(x,y)){
+            if (board.isValidMove(x-1,y-1,currentPlayer.getColor())){
                 break;
             }
             System.out.println("Position Invalide, entrez une position valide");   
         }
-        currentPlayer.play(x, y, board);
-        
+        currentPlayer.play(x-1, y-1, board);
+       }
+       else {
+           System.out.println("pas de moves possibles, tour passé");
+       }
         
     }
    
@@ -97,7 +102,8 @@ public class Game {
     public boolean checkWinner(){
        int N = board.countPieces('N');
        int B =board.countPieces('B');
-       if (N+B == 64){
+       
+       if (N+B == 64 || (!board.checkForPossibleMoves('N')&&!board.checkForPossibleMoves('B'))){
            if (N > B){
                System.out.println(player1.getName()+" est vainceur!!");
                return true;
@@ -115,7 +121,8 @@ public class Game {
       return false;
        
    }
-
+    
+    
    }
     
        
