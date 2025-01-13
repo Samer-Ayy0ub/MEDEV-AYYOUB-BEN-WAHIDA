@@ -23,10 +23,10 @@ public class Game {
    public void start(){
        Scanner scanner = new Scanner(System.in);
        board.initialize();
-       System.out.println("insert Player 1 name (black pieces):");
+       System.out.println("Entrez le nom du premier joueur (pieces noires):");
        String player1Name = scanner.nextLine();
        player1 = new Player(player1Name, 'N');
-       System.out.println("insert Player 2 name (white pieces):");
+       System.out.println("Entrez le nom du deuxieme joueur (pieces blanches):");
        String player2Name = scanner.nextLine();
        player2 = new Player(player2Name, 'B');
        currentPlayer = player1;
@@ -34,10 +34,11 @@ public class Game {
    }
    
    public void takeTurn(){
+       System.out.println("C'est le tour de : "+currentPlayer.getName());
        Scanner scanner = new Scanner(System.in);
        int x = -1, y = -1; // Variables for the position
        while (true) {
-            System.out.print("Enter the desired position (e.g., d3): ");
+            System.out.print("Entrez la position desirée (ex: d3): ");
             String input = scanner.nextLine().toLowerCase().trim();
 
             // Validate input format
@@ -52,18 +53,22 @@ public class Game {
                         // Convert letter to y (1 to 8) and number to x
                         y = letter - 'a' + 1; // 'a' -> 1, 'b' -> 2, ..., 'h' -> 8
                         x = Character.getNumericValue(number); // '1' -> 1, ..., '8' -> 8
-                        break; // Exit the loop when the input is valid
+                         
                     }
                 }
             }
-
-            // If input is invalid, prompt again
-            System.out.println("Invalid input. Please enter a valid position (e.g., d3).");
+            
+            if (board.isValidMove(x,y)){
+                break;
+            }
+            System.out.println("Position Invalide, entrez une position valide");   
         }
-
-        System.out.println("You entered: x = " + x + ", y = " + y);
+        currentPlayer.play(x, y, board);
+        
         
     }
+   
+   
        
    }
 
