@@ -13,7 +13,7 @@ public class Board {
 
     // Dimensions du plateau
     private static final int SIZE = 8;
-
+    
     /**
      * Constructeur de la classe Board.
      * Initialise le plateau avec des cellules vides et place les pions initiaux au centre.
@@ -23,6 +23,7 @@ public class Board {
         initializeBoard();
     }
 
+    
     /**
      * Initialise le plateau avec des cellules vides et place les pions de départ.
      * Les pions noirs ('N') et blancs ('B') sont placés au centre du plateau.
