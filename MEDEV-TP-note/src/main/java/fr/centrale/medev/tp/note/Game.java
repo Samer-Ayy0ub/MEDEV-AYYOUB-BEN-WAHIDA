@@ -6,12 +6,17 @@ package fr.centrale.medev.tp.note;
 
 /**
  *
- * @author Nadhem
+ * @author samer
  */
-public class Test {
-    public static void test(){
-        int n=0;
-        n+=1;
-        System.out.println(n);     
+public class Game {
+    private Board board;
+    private Player player1;
+    private Player player2;
+    private Player currentPlayer;
+    
+    public Game(){
+        
     }
+    
+   
 }
