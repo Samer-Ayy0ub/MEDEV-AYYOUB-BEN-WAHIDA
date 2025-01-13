@@ -10,11 +10,15 @@ package fr.centrale.medev.tp.note;
  */
 public class Player {
     private String name;
-    private String color;
+    private char color;
     
-    public Player(String aName, String aColor){
+    public Player(String aName, char aColor){
         this.name=aName;
         this.color=aColor;
+    }
+
+    Player() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public String getName() {
@@ -25,15 +29,15 @@ public class Player {
         this.name = name;
     }
 
-    public String getColor() {
+    public char getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(char color) {
         this.color = color;
     }
     // methode permettant le joueur de faire une 
     public void play(int x, int y, Board board) {
-       board.makeMove(x, y, this);   
+       board.makeMove(x, y, this.color);   
     }
 }

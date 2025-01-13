@@ -11,6 +11,8 @@ package fr.centrale.medev.tp.note;
 public class MEDEVTPNote {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Game game = new Game();
+        
+        game.takeTurn();
     }
 }
