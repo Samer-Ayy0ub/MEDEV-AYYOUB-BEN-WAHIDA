@@ -1,7 +1,5 @@
 package fr.centrale.medev.tp.note;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * La classe Board représente le plateau de jeu pour un jeu de type Othello.
@@ -213,6 +211,11 @@ public class Board {
         return c;
     }
     
+    /**
+     * verifie si le joueur de couleur "state" a des moves possibles
+     * @param state
+     * @return
+     */
     public boolean checkForPossibleMoves(char state){
         
         for (int i = 0; i < SIZE; i++) {

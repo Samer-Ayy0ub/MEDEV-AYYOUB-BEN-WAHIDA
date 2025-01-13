@@ -14,6 +14,12 @@ public class Cell {
     private char state; // 'N' pour Noir, 'B' pour Blanc, ' ' pour vide
     
      // Constructeur
+
+    /**
+     *
+     * @param x
+     * @param y
+     */
     public Cell(int x, int y) {
         this.x = x;
         this.y = y;
@@ -21,25 +27,50 @@ public class Cell {
     }
     
     // Getter pour X
+
+    /**
+     *
+     * @return
+     */
     public int getX() {
         return x;
     }
 
     // Getter pour Y
+
+    /**
+     *
+     * @return
+     */
     public int getY() {
         return y;
     }
 
     // Getter pour l'état
+
+    /**
+     *
+     * @return
+     */
     public char getState() {
         return state;
     }
 
     // Setter pour l'état
+
+    /**
+     *
+     * @param state
+     */
     public void setState(char state) {
         this.state = state;
     }
     // Représentation en chaîne de caractères (pour affichage)
+
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return String.valueOf(state);

@@ -26,6 +26,38 @@ public class Game {
 
     /**
      *
+     * @return
+     */
+    public Board getBoard() {
+        return board;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    /**
+     * initialise the board and the players
      */
    public void start(){
        Scanner scanner = new Scanner(System.in);
