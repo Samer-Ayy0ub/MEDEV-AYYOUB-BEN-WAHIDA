@@ -6,10 +6,8 @@ package fr.centrale.medev.tp.note;
 
 /**
  *
- * @author Nadhem
+ * @author samer
  */
-public class Test {
-    public static void main(String[] args) {
-        System.out.println("test!");
-    }
+public class Player {
+    
 }
