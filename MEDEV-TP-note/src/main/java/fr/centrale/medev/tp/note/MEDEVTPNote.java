@@ -15,11 +15,13 @@ public class MEDEVTPNote {
      * @param args
      */
     public static void main(String[] args) {
+
         Game game = new Game();
         game.start();
         while (!game.checkWinner()){          
             game.takeTurn();
             game.switchTurn();           
         }
+
     }
 }

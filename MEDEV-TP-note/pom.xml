@@ -30,5 +30,7 @@
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>fr.centrale.medev.tp.note.MEDEVTPNote</exec.mainClass>
+        <sonar.organization>samer-ayy0ub</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 </project>
