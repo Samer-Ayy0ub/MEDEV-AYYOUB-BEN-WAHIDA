@@ -10,8 +10,19 @@ package fr.centrale.medev.tp.note;
  */
 public class MEDEVTPNote {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Hello World! 2 ");
+
+        Game game = new Game();
+        game.start();
+        while (!game.checkWinner()){          
+            game.takeTurn();
+            game.switchTurn();
+            
+        }
+
     }
 }

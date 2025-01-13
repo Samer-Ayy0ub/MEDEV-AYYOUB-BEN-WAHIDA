@@ -10,30 +10,62 @@ package fr.centrale.medev.tp.note;
  */
 public class Player {
     private String name;
-    private String color;
+    private char color;
     
-    public Player(String aName, String aColor){
+    /**
+     *
+     * @param aName
+     * @param aColor
+     */
+    public Player(String aName, char aColor){
         this.name=aName;
         this.color=aColor;
     }
 
+    Player() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getColor() {
+    /**
+     *
+     * @return
+     */
+    public char getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    /**
+     *
+     * @param color
+     */
+    public void setColor(char color) {
         this.color = color;
     }
-    // methode permettant le joueur de faire une 
+  
+
+    /**
+     *  method that plays out a turn for the player
+     * @param x
+     * @param y
+     * @param board
+     */
     public void play(int x, int y, Board board) {
-       board.makeMove(x, y, this);   
+       board.makeMove(x, y, this.color);   
     }
 }
