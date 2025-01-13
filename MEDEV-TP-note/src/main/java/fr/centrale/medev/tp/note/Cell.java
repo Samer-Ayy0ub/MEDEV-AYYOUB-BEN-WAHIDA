@@ -13,6 +13,13 @@ public class Cell {
     private int y; // Position Y de la cellule
     private char state; // 'N' pour Noir, 'B' pour Blanc, ' ' pour vide
     
+     // Constructeur
+    public Cell(int x, int y) {
+        this.x = x;
+        this.y = y;
+        this.state = ' '; // Par défaut, la cellule est vide
+    }
+    
     // Getter pour X
     public int getX() {
         return x;
